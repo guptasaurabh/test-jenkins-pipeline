@@ -13,8 +13,8 @@ pipeline {
     }
     stage('Tests') {
       steps {
-        build 'Integration Test'
-        build 'Funtional Test'
+        build 'Test'
+        build 'Test'
       }
     }
   }
