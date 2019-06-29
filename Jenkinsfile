@@ -12,9 +12,18 @@ pipeline {
       }
     }
     stage('Tests') {
-      steps {
-        build 'Test'
-        build 'TestFail'
+      parallel {
+        stage('Tests') {
+          steps {
+            build 'Test'
+            build 'TestFail'
+          }
+        }
+        stage('Integration Test') {
+          steps {
+            build(job: 'Fail Test', propagate: true)
+          }
+        }
       }
     }
   }
