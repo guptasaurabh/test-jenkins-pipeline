@@ -14,7 +14,7 @@ pipeline {
     stage('Tests') {
       steps {
         build 'Test'
-        build 'Test'
+        build 'TestFail'
       }
     }
   }
