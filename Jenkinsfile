@@ -15,8 +15,8 @@ pipeline {
       parallel {
         stage('Tests') {
           steps {
-            build 'Test'
-            build 'TestFail'
+            build(job: 'Test', propagate: true)
+            build(job: 'TestFail2', propagate: true)
           }
         }
         stage('Integration Test') {
