@@ -21,7 +21,7 @@ pipeline {
         }
         stage('Integration Test') {
           steps {
-            build(job: 'Fail Test', propagate: true)
+            build(job: 'TestFail', propagate: true)
           }
         }
       }
